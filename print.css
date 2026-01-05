@@ -1,0 +1,181 @@
+/* Print Styles for Harmonia Psychology Website */
+
+@media print {
+    /* Reset styles for print */
+    * {
+        box-shadow: none !important;
+        text-shadow: none !important;
+        background: transparent !important;
+        color: black !important;
+    }
+    
+    /* Hide unnecessary elements */
+    .preloader,
+    .header,
+    .hero,
+    .floating-circle,
+    .mobile-menu-toggle,
+    .footer-social,
+    .btn,
+    .service-icon,
+    .article-image,
+    .logo-icon,
+    .dots-container,
+    .wave-bg {
+        display: none !important;
+    }
+    
+    /* Ensure proper layout for print */
+    body {
+        font-size: 12pt;
+        line-height: 1.6;
+        color: black;
+        background: white;
+    }
+    
+    /* Header styling for print */
+    .header {
+        position: static;
+        background: white;
+        border: none;
+        box-shadow: none;
+    }
+    
+    .logo {
+        color: black;
+        font-weight: bold;
+    }
+    
+    .logo-text {
+        color: black;
+    }
+    
+    /* Section styling */
+    section {
+        page-break-inside: avoid;
+        margin-bottom: 20mm;
+    }
+    
+    .section-header {
+        border-bottom: 2px solid #333;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+    
+    /* Content styling */
+    .container {
+        max-width: none;
+        padding: 0 20mm;
+    }
+    
+    /* Grid layouts to stack for print */
+    .about-content,
+    .contact-content,
+    .services-grid,
+    .articles-grid {
+        display: block !important;
+    }
+    
+    .about-text,
+    .about-image,
+    .contact-info,
+    .contact-form,
+    .service-card,
+    .article-card {
+        width: 100% !important;
+        margin-bottom: 20px;
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+        background: white !important;
+    }
+    
+    /* Remove hover effects */
+    a {
+        color: black !important;
+        text-decoration: underline !important;
+    }
+    
+    a:hover {
+        color: black !important;
+    }
+    
+    /* Form styling for print */
+    .contact-form {
+        border: 1px solid #ccc;
+        padding: 20px;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        border: 1px solid #ccc;
+        background: white !important;
+        color: black !important;
+    }
+    
+    /* Footer styling */
+    .footer {
+        background: white !important;
+        color: black !important;
+        border-top: 2px solid #333;
+        padding-top: 20px;
+    }
+    
+    .footer-links ul {
+        display: block !important;
+    }
+    
+    .footer-links li {
+        display: block !important;
+        margin-bottom: 5px;
+    }
+    
+    /* Ensure images print properly */
+    img {
+        max-width: 100%;
+        height: auto;
+        border: none;
+    }
+    
+    /* Remove animations and transitions */
+    * {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+    }
+    
+    /* Print-specific typography */
+    h1, h2, h3, h4, h5, h6 {
+        color: black !important;
+        font-family: Georgia, 'Times New Roman', serif !important;
+    }
+    
+    p {
+        color: black !important;
+        font-family: Georgia, 'Times New Roman', serif !important;
+    }
+    
+    /* Ensure good contrast */
+    .text-light,
+    .light-text {
+        color: black !important;
+    }
+    
+    /* Remove background colors that waste ink */
+    .card-bg,
+    .bg-color {
+        background: white !important;
+    }
+    
+    /* Print page breaks */
+    .page-break {
+        page-break-before: always;
+    }
+    
+    /* Ensure links are visible in print */
+    .service-link,
+    .article-link {
+        color: black !important;
+        text-decoration: underline !important;
+        font-weight: bold;
+    }
+}

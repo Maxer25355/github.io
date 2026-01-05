@@ -1,0 +1,315 @@
+/* Дополнительные анимации для сайта */
+
+/* Плавное появление элементов */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Плавное появление с масштабированием */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Плавное появление с вращением */
+@keyframes fadeInRotate {
+    from {
+        opacity: 0;
+        transform: rotate(-5deg);
+    }
+    to {
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+}
+
+/* Волнообразное движение */
+@keyframes wave {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Пульсация */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Мерцание */
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Секции с анимацией */
+.section-header {
+    animation: fadeIn 0.8s ease-out;
+}
+
+.hero-title {
+    animation: fadeInScale 1s ease-out;
+}
+
+.hero-subtitle {
+    animation: fadeIn 1s ease-out 0.2s both;
+}
+
+.hero-buttons {
+    animation: fadeIn 1s ease-out 0.4s both;
+}
+
+/* Карточки с эффектом */
+.service-card {
+    animation: fadeInRotate 0.6s ease-out;
+}
+
+.article-card {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.feature {
+    animation: wave 2s ease-in-out infinite;
+}
+
+/* Плавное появление при прокрутке */
+.animated {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.animated.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Эффекты наведения */
+.btn:hover {
+    animation: pulse 0.3s ease-out;
+}
+
+.logo-icon:hover {
+    animation: twinkle 0.5s ease-in-out;
+}
+
+/* Фоновые анимации */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.hero {
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+}
+
+/* Медленное плавание элементов */
+.floating-circle {
+    animation: wave 4s ease-in-out infinite;
+}
+
+.floating-circle:nth-child(2) {
+    animation-duration: 6s;
+}
+
+.floating-circle:nth-child(3) {
+    animation-duration: 8s;
+}
+
+/* Эффект печатающейся строки */
+.typewriter {
+    overflow: hidden;
+    border-right: 2px solid var(--primary-color);
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--primary-color); }
+}
+
+/* Секции с задержкой анимации */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+.delay-6 { animation-delay: 0.6s; }
+.delay-7 { animation-delay: 0.7s; }
+.delay-8 { animation-delay: 0.8s; }
+.delay-9 { animation-delay: 0.9s; }
+.delay-10 { animation-delay: 1s; }
+
+/* Параллакс-эффекты */
+.parallax {
+    transform: translateY(0);
+    transition: transform 0.3s ease-out;
+}
+
+.parallax:hover {
+    transform: translateY(-5px);
+}
+
+/* Эффект "дыхания" для элементов */
+.breathing {
+    animation: breathing 4s ease-in-out infinite;
+}
+
+@keyframes breathing {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+/* Светящийся эффект */
+.glow {
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.3);
+    transition: box-shadow 0.3s ease;
+}
+
+.glow:hover {
+    box-shadow: 0 0 20px rgba(102, 126, 234, 0.6);
+}
+
+/* Эффект "воды" для кнопок */
+.water-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.water-effect::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s;
+}
+
+.water-effect:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Эффект "тени" при наведении */
+.shadow-hover {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.shadow-hover:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Эффект "вспышки" */
+.flash {
+    animation: flash 0.5s ease-out;
+}
+
+@keyframes flash {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Эффект "дымки" */
+.smoke-effect {
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: smoke 10s ease-in-out infinite;
+}
+
+@keyframes smoke {
+    0%, 100% {
+        transform: translateX(-100px);
+    }
+    50% {
+        transform: translateX(100px);
+    }
+}
+
+/* Эффект "звезда" */
+.star-effect {
+    position: relative;
+}
+
+.star-effect::after {
+    content: '★';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 20px;
+    color: var(--accent-color);
+    animation: starTwinkle 2s ease-in-out infinite;
+}
+
+@keyframes starTwinkle {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

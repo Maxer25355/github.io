@@ -1,0 +1,70 @@
+# Служебные файлы операционной системы
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Логи
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Резервные копии
+*.bak
+*.swp
+*.swo
+*~
+
+# Временные файлы
+.tmp
+.temp
+.cache
+
+# Папки с зависимостями (если будут добавлены в будущем)
+node_modules/
+bower_components/
+
+# Конфигурационные файлы IDE
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Файлы для локальной разработки
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Файлы сборки (если будут добавлены в будущем)
+dist/
+build/
+
+# Файлы для аналитики
+*.tgz
+*.tar.gz
+
+# Файлы для тестирования
+coverage/
+.nyc_output/
+
+# Файлы для документации (если будут генерироваться)
+docs/
+documentation/
+
+# Файлы для временного хранения
+temp/
+tmp/
+
+# Файлы для GitHub Pages
+.github/
+!/.github/workflows/
+
+# Файлы для CI/CD
+.github/workflows/deploy.yml

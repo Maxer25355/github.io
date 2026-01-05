@@ -1,0 +1,23 @@
+# robots.txt для психологического портала Harmonia
+
+User-agent: *
+Allow: /
+
+# Запрещаем индексацию служебных файлов
+Disallow: /favicon.ico
+Disallow: /robots.txt
+Disallow: /sitemap.xml
+Disallow: /README.md
+
+# Карта сайта
+Sitemap: https://yourinternetportal.ru/sitemap.xml
+
+# Предпочтения для поисковых систем
+User-agent: Googlebot
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+# Задержка между запросами (в секундах)
+Crawl-delay: 1
