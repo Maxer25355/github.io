@@ -14,14 +14,15 @@ body {
 /* Header - narrow */
 .header {
     background-color: #4a6fa5;
-    padding: 15px 20px;
+    padding: 10px 20px;
     text-align: center;
 }
 
-.site-title {
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
+.header-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 /* Navigation Menu */
