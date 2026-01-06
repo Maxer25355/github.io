@@ -3,302 +3,534 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Психологический портал | Душевное равновесие</title>
-    <meta name="description" content="Элегантный психологический портал для гармонии разума и души">
-    <meta name="keywords" content="психология, саморазвитие, медитация, гармония, душевное здоровье">
-    <meta name="author" content="Maxer25355">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Психологический портал | Душевное равновесие">
-    <meta property="og:description" content="Элегантный психологический портал для гармонии разума и души">
-    <meta property="og:url" content="https://yourinternetportal.ru">
-    <meta property="og:type" content="website">
-    <link rel="canonical" href="https://yourinternetportal.ru">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    
-    <!-- CSS -->
+    <meta name="description" content="ЛитРес - электронная библиотека. Книги и аудиокниги онлайн">
+    <title>ЛитРес - электронная библиотека | Книги и аудиокниги онлайн</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="animations.css">
     <link rel="stylesheet" href="preloader.css">
     <link rel="stylesheet" href="accessibility.css">
-    <link rel="stylesheet" href="print.css" media="print">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <!-- Skip to content link for accessibility -->
-    <a href="#main-content" class="skip-link">Перейти к основному содержанию</a>
-    
     <!-- Preloader -->
-    <div class="preloader">
-        <div class="wave-bg"></div>
-        <div class="dots-container">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-        </div>
-        <div class="loader"></div>
-        <div class="preloader-text">Находим гармонию...</div>
+    <div class="preloader" id="preloader">
+        <div class="preloader__spinner"></div>
     </div>
+
+    <!-- Accessibility Skip Link -->
+    <a href="#main-content" class="skip-link">Перейти к контенту</a>
+
     <!-- Header -->
-    <header class="header" role="banner">
+    <header class="header">
+        <div class="header-top">
+            <a href="#" class="promo-banner">Каникулы со скидками до 70% на подборку книг →</a>
+        </div>
+        
         <div class="container">
             <div class="header-content">
-                <div class="logo">
-                    <span class="logo-icon" aria-hidden="true">☯</span>
-                    <span class="logo-text">Harmonia</span>
-                </div>
-                <nav class="nav" aria-label="Main Navigation">
-                    <ul class="nav-list">
-                        <li><a href="#home" class="nav-link active" aria-current="page">Главная</a></li>
-                        <li><a href="#about" class="nav-link">О нас</a></li>
-                        <li><a href="#services" class="nav-link">Услуги</a></li>
-                        <li><a href="#articles" class="nav-link">Статьи</a></li>
-                        <li><a href="#contact" class="nav-link">Контакты</a></li>
-                    </ul>
+                <!-- Catalog Button -->
+                <button class="catalog-btn" aria-label="Каталог">
+                    <svg viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19.5 10H5.5C4.94772 10 4.5 10.4477 4.5 11V18C4.5 18.5523 4.94772 19 5.5 19H19.5C20.0523 19 20.5 18.5523 20.5 18V11C20.5 10.4477 20.0523 10 19.5 10Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                        <path d="M6.5 7.5H18.5" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                        <path d="M8.5 5H16.5" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Каталог</span>
+                </button>
+
+                <!-- Logo -->
+                <a href="#" class="logo" aria-label="Главная страница">
+                    <svg viewBox="0 0 173 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <text x="0" y="35" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#9013FE">ЛитРес</text>
+                    </svg>
+                </a>
+
+                <!-- Search Form -->
+                <form class="search-form" role="search" aria-label="Поиск">
+                    <div class="search-input-wrapper">
+                        <input 
+                            type="search" 
+                            class="search-input" 
+                            placeholder="Искать книги, авторов, ISBN"
+                            aria-label="Поиск"
+                            autocomplete="off"
+                        >
+                        <button type="submit" class="search-btn">Найти</button>
+                    </div>
+                </form>
+
+                <!-- User Navigation -->
+                <nav class="user-nav" aria-label="Пользовательское меню">
+                    <a href="#" class="user-link">
+                        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.293 15.293c2.7757-1.2553 4.707-4.0486 4.707-7.293 0-4.4183-3.5817-8-8-8-3.2444 0-6.0377 1.9313-7.293 4.707-2.7757 1.2553-4.707 4.0486-4.707 7.293 0 4.4182 3.5817 8 8 8 3.2444 0 6.0377-1.9314 7.293-4.707z" fill="#9013FE"/>
+                        </svg>
+                        <span>Бонусы</span>
+                    </a>
+                    <a href="#" class="user-link">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.9243 9H5.07573C4.41135 9 3.93169 9.63591 4.11421 10.2747L5.92111 16.5989C6.41174 18.3161 7.98128 19.5 9.76721 19.5H14.2328C16.0187 19.5 17.5883 18.3161 18.0789 16.5989L19.8858 10.2747C20.0683 9.6359 19.5886 9 18.9243 9Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                            <path d="M15.7395 9H8.26051C7.54417 9 7.06016 8.2689 7.33993 7.60945L7.62487 6.9378C8.25188 5.45986 9.70176 4.5 11.3072 4.5H12.6928C14.2982 4.5 15.7481 5.45986 16.3751 6.9378L16.6601 7.60945C16.9398 8.2689 16.4558 9 15.7395 9Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Корзина</span>
+                    </a>
+                    <a href="#" class="user-link">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.5203 8.4566L12 8.8557L12.4797 8.45659C14.071 7.1326 16.179 6.44532 17.9438 6.09571C18.8178 5.92257 19.5885 5.83593 20.1392 5.7927C20.1772 5.78972 20.2142 5.78694 20.25 5.78436V16.4503C20.2116 16.4537 20.172 16.4573 20.131 16.4612C19.6036 16.5116 18.8664 16.612 18.0166 16.8124C16.3246 17.2114 14.1419 18.0175 12.2909 19.6576C12.1308 19.7995 11.8692 19.7995 11.7091 19.6576C9.85805 18.0175 7.67537 17.2114 5.9834 16.8124C5.13358 16.612 4.39636 16.5116 3.86895 16.4612C3.82805 16.4573 3.78838 16.4537 3.75 16.4503V5.78437C3.78583 5.78695 3.82277 5.78972 3.86078 5.79271C4.41153 5.83594 5.18216 5.92258 6.05618 6.09572C7.82102 6.44534 9.929 7.13261 11.5203 8.4566Z" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M12 8V14.5V19" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                        <span>Мои книги</span>
+                    </a>
+                    <a href="#" class="user-link login-btn">
+                        <span>Войти</span>
+                    </a>
                 </nav>
-                <div class="mobile-menu-toggle" aria-label="Mobile menu toggle">
-                    <i class="fas fa-bars" aria-hidden="true"></i>
-                    <span class="sr-only">Открыть меню</span>
-                </div>
+            </div>
+        </div>
+
+        <!-- Lower Menu -->
+        <div class="lower-menu">
+            <div class="container">
+                <ul class="lower-menu-list" role="navigation" aria-label="Основное меню">
+                    <li><a href="#" class="lower-menu-link subscription">Подписка за 0 ₽</a></li>
+                    <li><a href="#" class="lower-menu-link">Промокод</a></li>
+                    <li><a href="#" class="lower-menu-link">Новинки</a></li>
+                    <li><a href="#" class="lower-menu-link">Популярное</a></li>
+                    <li><a href="#" class="lower-menu-link">Подборки</a></li>
+                    <li><a href="#" class="lower-menu-link">Аудиокниги</a></li>
+                    <li><a href="#" class="lower-menu-link">Эксклюзивы</a></li>
+                    <li><a href="#" class="lower-menu-link">Черновики</a></li>
+                    <li><a href="#" class="lower-menu-link">Лекции</a></li>
+                    <li><a href="#" class="lower-menu-link">Комиксы и вебтуны</a></li>
+                    <li><a href="#" class="lower-menu-link">Журнал</a></li>
+                    <li><a href="#" class="lower-menu-link">Сертификаты</a></li>
+                </ul>
             </div>
         </div>
     </header>
 
     <!-- Main Content -->
     <main id="main-content" role="main">
-    
-    <!-- Hero Section -->
-    <section id="home" class="hero" aria-label="Главная секция">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Найдите гармонию <br>внутри себя</h1>
-                <p class="hero-subtitle">Путешествие к внутреннему спокойствию и душевному равновесию</p>
-                <div class="hero-buttons">
-                    <a href="#services" class="btn btn-primary">Начать путь</a>
-                    <a href="#about" class="btn btn-secondary">Узнать больше</a>
-                </div>
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumbs" aria-label="Хлебные крошки">
+            <div class="container">
+                <ul class="breadcrumbs-list">
+                    <li><a href="#">Книги</a></li>
+                    <li><a href="#">Психология</a></li>
+                    <li><a href="#">Наталия Богачкина</a></li>
+                    <li>Психология: конспект лекций</li>
+                </ul>
             </div>
-            <div class="hero-image">
-                <div class="floating-circle"></div>
-                <div class="floating-circle small"></div>
-                <div class="floating-circle large"></div>
-            </div>
-        </div>
-    </section>
+        </nav>
 
-    <!-- About Section -->
-    <section id="about" class="about" aria-label="О нас">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">О нас</h2>
-                <p class="section-subtitle">Мы помогаем найти баланс в современном мире</p>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Психологическая гармония для современного человека</h3>
-                    <p>В нашем быстро меняющемся мире важно находить время для себя, для внутреннего диалога и самопознания. Наш портал создан для тех, кто стремится к гармоничной жизни, полной осознанности и внутреннего спокойствия.</p>
-                    <p>Мы предлагаем проверенные методы и современные подходы к психологическому здоровью, адаптированные для реалий сегодняшнего дня.</p>
-                    <div class="about-features">
-                        <div class="feature">
-                            <i class="fas fa-meditation"></i>
-                            <h4>Медитация</h4>
-                            <p>Техники для успокоения ума</p>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-brain"></i>
-                            <h4>Самопознание</h4>
-                            <p>Путь к пониманию себя</p>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-heart"></i>
-                            <h4>Эмоции</h4>
-                            <p>Управление чувствами</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-image">
-                    <div class="image-placeholder">
-                        <i class="fas fa-leaf"></i>
-                    </div>
+        <!-- Hero Banner -->
+        <section class="container">
+            <div class="hero-banner">
+                <div class="banner-content">
+                    <h1>Каникулы со скидками до 70%</h1>
+                    <p>Отличное время для чтения! Специальные предложения на книги и аудиокниги всех жанров. Успейте сохранить в корзину.</p>
+                    <a href="#" class="btn btn-primary">Выбрать книги</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services" aria-label="Наши услуги">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Наши услуги</h2>
-                <p class="section-subtitle">Индивидуальный подход к каждому</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-couch"></i>
-                    </div>
-                    <h3>Индивидуальная терапия</h3>
-                    <p>Персональные сессии с опытным психологом для решения ваших уникальных задач и вызовов.</p>
-                    <a href="#contact" class="service-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+        <!-- Popular Books Section -->
+        <section class="books-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Бестселлеры</h2>
+                    <a href="#" class="view-all">
+                        Смотреть все
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </a>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Групповые практики</h3>
-                    <p>Совместные занятия и тренинги для развития навыков общения и самореализации.</p>
-                    <a href="#contact" class="service-link">Подробнее <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-book"></i>
-                    </div>
-                    <h3>Обучающие материалы</h3>
-                    <p>Качественные статьи, видео и аудио материалы для самостоятельного развития.</p>
-                    <a href="#articles" class="service-link">Подробнее <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-moon"></i>
-                    </div>
-                    <h3>Медитации</h3>
-                    <p>Гиды по медитации для разных уровней подготовки и целей практики.</p>
-                    <a href="#articles" class="service-link">Подробнее <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
+                
+                <div class="books-grid">
+                    <!-- Book 1 -->
+                    <article class="book-card">
+                        <a href="#">
+                            <div class="book-cover">
+                                <img src="https://cdn.litres.ru/pub/c/cover/179674.webp" alt="Психология: конспект лекций" loading="lazy">
+                                <span class="book-badge">Хит</span>
+                                <div class="book-audio-badge">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="book-info">
+                                <h3 class="book-title">Психология: конспект лекций</h3>
+                                <p class="book-author">Наталия Богачкина</p>
+                                <div class="book-rating">
+                                    <svg viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                                    </svg>
+                                    <span>4.5</span>
+                                </div>
+                                <p class="book-price">74.90 ₽</p>
+                            </div>
+                        </a>
+                    </article>
 
-    <!-- Articles Section -->
-    <section id="articles" class="articles" aria-label="Полезные статьи">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Полезные статьи</h2>
-                <p class="section-subtitle">Знания для вашего развития</p>
-            </div>
-            <div class="articles-grid">
-                <article class="article-card">
-                    <div class="article-image">
-                        <i class="fas fa-mind-share"></i>
-                    </div>
-                    <div class="article-content">
-                        <h3>Как справиться со стрессом</h3>
-                        <p class="article-meta">15 января 2024 • 8 мин чтения</p>
-                        <p>Практические советы и техники для управления стрессом в повседневной жизни.</p>
-                        <a href="#" class="article-link">Читать статью <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-                <article class="article-card">
-                    <div class="article-image">
-                        <i class="fas fa-seedling"></i>
-                    </div>
-                    <div class="article-content">
-                        <h3>Путь к самопознанию</h3>
-                        <p class="article-meta">10 января 2024 • 12 мин чтения</p>
-                        <p>Методы и практики для глубокого понимания себя и своих потребностей.</p>
-                        <a href="#" class="article-link">Читать статью <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-                <article class="article-card">
-                    <div class="article-image">
-                        <i class="fas fa-wind"></i>
-                    </div>
-                    <div class="article-content">
-                        <h3>Медитация для начинающих</h3>
-                        <p class="article-meta">5 января 2024 • 10 мин чтения</p>
-                        <p>Пошаговое руководство для тех, кто хочет начать практиковать медитацию.</p>
-                        <a href="#" class="article-link">Читать статью <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
+                    <!-- Book 2 -->
+                    <article class="book-card">
+                        <a href="#">
+                            <div class="book-cover">
+                                <img src="https://cdn.litres.ru/pub/c/cover/68010761.webp" alt="KGBT+" loading="lazy">
+                                <span class="book-badge">Новинка</span>
+                                <div class="book-audio-badge">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="book-info">
+                                <h3 class="book-title">KGBT+ (КГБТ+)</h3>
+                                <p class="book-author">Виктор Пелевин</p>
+                                <div class="book-rating">
+                                    <svg viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                                    </svg>
+                                    <span>4.8</span>
+                                </div>
+                                <p class="book-price">349 ₽</p>
+                            </div>
+                        </a>
+                    </article>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact" aria-label="Контакты">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Связаться с нами</h2>
-                <p class="section-subtitle">Готовы начать свой путь?</p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Начните свой путь к гармонии</h3>
-                    <p>Свяжитесь с нами, чтобы записаться на консультацию или получить больше информации о наших услугах.</p>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>info@yourinternetportal.ru</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+7 (495) 123-45-67</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-globe"></i>
-                        <span>https://yourinternetportal.ru</span>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form action="#" method="POST" novalidate>
-                        <div class="form-group">
-                            <label for="name">Ваше имя</label>
-                            <input type="text" id="name" name="name" required aria-required="true">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Ваш email</label>
-                            <input type="email" id="email" name="email" required aria-required="true">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Ваше сообщение</label>
-                            <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Отправить сообщение</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+                    <!-- Book 3 -->
+                    <article class="book-card">
+                        <a href="#">
+                            <div class="book-cover">
+                                <img src="https://cdn.litres.ru/pub/c/cover/68048951.webp" alt="Хочу и буду" loading="lazy">
+                                <span class="book-badge">Бестселлер</span>
+                                <div class="book-audio-badge">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="book-info">
+                                <h3 class="book-title">Хочу и буду. 6 правил счастливой жизни</h3>
+                                <p class="book-author">Михаил Лабковский</p>
+                                <div class="book-rating">
+                                    <svg viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                                    </svg>
+                                    <span>4.7</span>
+                                </div>
+                                <p class="book-price">
+                                    <span class="discount">-45%</span>
+                                    149 ₽
+                                    <span class="old-price">269 ₽</span>
+                                </p>
+                            </div>
+                        </a>
+                    </article>
 
+                    <!-- Book 4 -->
+                    <article class="book-card">
+                        <a href="#">
+                            <div class="book-cover">
+                                <img src="https://cdn.litres.ru/pub/c/cover/68508437.webp" alt="45 татуировок родителя" loading="lazy">
+                                <span class="book-badge">Хит</span>
+                                <div class="book-audio-badge">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="book-info">
+                                <h3 class="book-title">45 татуировок родителя. Мои правила воспитания</h3>
+                                <p class="book-author">Максим Батырев</p>
+                                <div class="book-rating">
+                                    <svg viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                                    </svg>
+                                    <span>4.9</span>
+                                </div>
+                                <p class="book-price">199 ₽</p>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Book 5 -->
+                    <article class="book-card">
+                        <a href="#">
+                            <div class="book-cover">
+                                <img src="https://cdn.litres.ru/pub/c/cover/68322223.webp" alt="Чагин" loading="lazy">
+                                <span class="book-badge">Новинка</span>
+                            </div>
+                            <div class="book-info">
+                                <h3 class="book-title">Чагин</h3>
+                                <p class="book-author">Евгений Водолазкин</p>
+                                <div class="book-rating">
+                                    <svg viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                                    </svg>
+                                    <span>4.6</span>
+                                </div>
+                                <p class="book-price">299 ₽</p>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Book 6 -->
+                    <article class="book-card">
+                        <a href="#">
+                            <div class="book-cover">
+                                <img src="https://cdn.litres.ru/pub/c/cover/68756415.webp" alt="Хозяйка магической лавки – 2" loading="lazy">
+                                <span class="book-badge">Эксклюзив</span>
+                            </div>
+                            <div class="book-info">
+                                <h3 class="book-title">Хозяйка магической лавки – 2</h3>
+                                <p class="book-author">Александра Черчень</p>
+                                <div class="book-rating">
+                                    <svg viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                                    </svg>
+                                    <span>4.8</span>
+                                </div>
+                                <p class="book-price">149 ₽</p>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Genres Section -->
+        <section class="genres-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Популярные жанры</h2>
+                    <a href="#" class="view-all">
+                        Все 142 жанра
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </a>
+                </div>
+                
+                <div class="genres-grid">
+                    <!-- Fantasy -->
+                    <a href="#" class="genre-card">
+                        <div class="genre-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                <path d="M2 17l10 5 10-5"/>
+                                <path d="M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <div class="genre-info">
+                            <h4>Фэнтези</h4>
+                            <span>15 000+ книг</span>
+                        </div>
+                    </a>
+
+                    <!-- Detective -->
+                    <a href="#" class="genre-card">
+                        <div class="genre-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"/>
+                                <path d="M21 21l-4.35-4.35"/>
+                                <path d="M11 8v6M8 11h6"/>
+                            </svg>
+                        </div>
+                        <div class="genre-info">
+                            <h4>Детективы</h4>
+                            <span>12 000+ книг</span>
+                        </div>
+                    </a>
+
+                    <!-- Romance -->
+                    <a href="#" class="genre-card">
+                        <div class="genre-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                            </svg>
+                        </div>
+                        <div class="genre-info">
+                            <h4>Любовные романы</h4>
+                            <span>18 000+ книг</span>
+                        </div>
+                    </a>
+
+                    <!-- Business -->
+                    <a href="#" class="genre-card">
+                        <div class="genre-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                            </svg>
+                        </div>
+                        <div class="genre-info">
+                            <h4>Бизнес-книги</h4>
+                            <span>8 000+ книг</span>
+                        </div>
+                    </a>
+
+                    <!-- Psychology -->
+                    <a href="#" class="genre-card">
+                        <div class="genre-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <div class="genre-info">
+                            <h4>Психология</h4>
+                            <span>10 000+ книг</span>
+                        </div>
+                    </a>
+
+                    <!-- Science Fiction -->
+                    <a href="#" class="genre-card">
+                        <div class="genre-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                                <circle cx="12" cy="12" r="4"/>
+                            </svg>
+                        </div>
+                        <div class="genre-info">
+                            <h4>Фантастика</h4>
+                            <span>20 000+ книг</span>
+                        </div>
+                    </a>
+
+                    <!-- Children -->
+                    <a href="#" class="genre-card">
+                        <div class="genre-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+                                <path d="M12 6v6l4 2"/>
+                            </svg>
+                        </div>
+                        <div class="genre-info">
+                            <h4>Детские книги</h4>
+                            <span>25 000+ книг</span>
+                        </div>
+                    </a>
+
+                    <!-- Self-development -->
+                    <a href="#" class="genre-card">
+                        <div class="genre-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                        </div>
+                        <div class="genre-info">
+                            <h4>Саморазвитие</h4>
+                            <span>9 000+ книг</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Searches -->
+        <section class="container">
+            <div class="popular-searches">
+                <h3>Часто ищут</h3>
+                <div class="searches-grid">
+                    <a href="#" class="search-item">Виктор Пелевин</a>
+                    <a href="#" class="search-item">Дмитрий Глуховский</a>
+                    <a href="#" class="search-item">Сергей Лукьяненко</a>
+                    <a href="#" class="search-item">Александра Маринина</a>
+                    <a href="#" class="search-item">Борис Акунин</a>
+                    <a href="#" class="search-item">Стивен Кинг</a>
+                    <a href="#" class="search-item">Джоан Роулинг</a>
+                    <a href="#" class="search-item">Аудиокниги</a>
+                    <a href="#" class="search-item">Бесплатные книги</a>
+                    <a href="#" class="search-item">Новинки 2024</a>
+                </div>
+            </div>
+        </section>
     </main>
-    
+
     <!-- Footer -->
-    <footer class="footer" role="contentinfo">
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">
-                    <span class="logo-icon">☯</span>
-                    <span class="logo-text">Harmonia</span>
-                </div>
-                <div class="footer-links">
+                <div class="footer-section">
+                    <h4>Каталог</h4>
                     <ul>
-                        <li><a href="#home">Главная</a></li>
-                        <li><a href="#about">О нас</a></li>
-                        <li><a href="#services">Услуги</a></li>
-                        <li><a href="#articles">Статьи</a></li>
-                        <li><a href="#contact">Контакты</a></li>
+                        <li><a href="#">Книги</a></li>
+                        <li><a href="#">Аудиокниги</a></li>
+                        <li><a href="#">Подборки</a></li>
+                        <li><a href="#">Жанры</a></li>
+                        <li><a href="#">Авторы</a></li>
                     </ul>
                 </div>
-                <div class="footer-social">
-                    <a href="#"><i class="fab fa-vk"></i></a>
-                    <a href="#"><i class="fab fa-telegram"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                <div class="footer-section">
+                    <h4>О сервисе</h4>
+                    <ul>
+                        <li><a href="#">О компании</a></li>
+                        <li><a href="#">Вакансии</a></li>
+                        <li><a href="#">Партнёрская программа</a></li>
+                        <li><a href="#">Для бизнеса</a></li>
+                        <li><a href="#">Мобильные приложения</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Помощь</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Способы оплаты</a></li>
+                        <li><a href="#">Правила пользования</a></li>
+                        <li><a href="#">Политика конфиденциальности</a></li>
+                        <li><a href="#">Связаться с нами</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Скачать приложение</h4>
+                    <div class="app-links">
+                        <a href="#" class="app-btn">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+                            </svg>
+                            App Store
+                        </a>
+                        <a href="#" class="app-btn">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/>
+                            </svg>
+                            Google Play
+                        </a>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" aria-label="ВКонтакте">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-2v2h-2v-2H7v-2h2V9h2v2h2v2z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Telegram">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-2v2h-2v-2H7v-2h2V9h2v2h2v2z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Одноклассники">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-2v2h-2v-2H7v-2h2V9h2v2h2v2z"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2024 Harmonia Psychology. Все права защищены.</p>
+                <p>© 2024 ЛитРес. Все права защищены.</p>
+                <p>Электронная библиотека №1 в России</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
