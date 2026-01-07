@@ -14,7 +14,7 @@ body {
 /* Header - narrow */
 .header {
     background-color: #4a6fa5;
-    padding: 1px 2px;
+    padding: 1px 1px;
     text-align: center;
 }
 
@@ -93,5 +93,6 @@ body {
     transform: translateY(-3px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
+
 
 
