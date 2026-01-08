@@ -14,7 +14,7 @@ body {
 /* Header - narrow */
 .header {
     background-color: #4a6fa5;
-    padding: 0px 0px;
+    padding: 10px 20px;
     text-align: center;
 }
 
@@ -298,4 +298,3 @@ body {
     font-weight: 600;
     font-size: 15px;
 }
-
