@@ -14,7 +14,7 @@ body {
 /* Header - narrow */
 .header {
     background-color: #4a6fa5;
-    padding: 10px 20px;
+    padding: 5px 5px;
     text-align: center;
 }
 
@@ -385,3 +385,4 @@ body {
     align-items: center;
     gap: 5px;
 }
+
